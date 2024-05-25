@@ -1,0 +1,22 @@
+<div>
+  <h1 class="title p-3">Simple Weather</h1>
+  <ul class="m-0 p-0">
+    <li
+      class="p-3"
+      *ngFor="let city of cities"
+      [class.active-city]="selectedCity === city"
+      (click)="onClickCity(city)"
+    >
+      {{ city }}
+    </li>
+  </ul>
+  <div class="city-container p-3">
+    <div class="card container p-3">
+      <h1>Next hours</h1>
+
+      <div>
+        {{ cityWeather | json }}
+      </div>
+    </div>
+  </div>
+</div>
